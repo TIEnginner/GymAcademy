@@ -369,3 +369,11 @@ tk.Button(root, text="Cadastrar", command=register, font=('Arial', 10)).pack(pad
 root.mainloop()
 
 
+
+
+
+
+
+
+
+
