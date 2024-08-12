@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 import json
 import os
-import PySimpleGUI as sg
+
 import pandas as pd
 import json
 
