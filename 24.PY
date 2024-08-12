@@ -289,21 +289,7 @@ def exibir_planilha():
     window.close()
 
 # Função principal para iniciar o programa
-def iniciar_programa():
-    sg.theme('DarkBlue')
-    janela = sg.Window('Nome da Academia', tela_inicial(), size=(480, 300))
 
-    while True:
-        eventos, valores = janela.read()
-
-        if eventos == sg.WIN_CLOSED:
-            break
-        if eventos == '-excel-':
-            janela.hide()
-            exibir_planilha()
-            janela.un_hide()
-
-    janela.close()
 
 def tela_inicial():
     return [
@@ -351,7 +337,9 @@ while True:
    
     if eventos =='-excel-':
         
-         iniciar_programa()
+            janela.hide()
+            exibir_planilha()
+            janela.un_hide()
 
 
 
