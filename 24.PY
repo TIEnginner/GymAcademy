@@ -7,6 +7,10 @@ import json
 
 # Nome do arquivo onde os dados serão salvos
 json_file = 'dados_salvos.json'
+def salvar_fichas(fichas):
+    with open('fichas.json', 'w') as file:
+        json.dump(fichas, file, indent=4)
+
 class AgendaApp:
     def __init__(self):
         self.filename = "agenda.json"
