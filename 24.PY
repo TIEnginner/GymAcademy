@@ -1,6 +1,7 @@
 import PySimpleGUI as sg
 import json
 import os
+import PySimpleGUI as sg
 import pandas as pd
 import json
 
@@ -197,7 +198,10 @@ def carregar_fichas():
             return json.load(file)
     return []
 
-
+# Função para salvar fichas no arquivo JSON
+def salvar_fichas(fichas):
+    with open('fichas.json', 'w') as file:
+        json.dump(fichas, file, indent=4)
 
 def nome_academia():
     return [
@@ -226,6 +230,16 @@ def criar_layout_planilha():
     layout.append([sg.Button('Salvar'), sg.Button('Carregar'), sg.Button('Limpar'), sg.Button('Sair')])
     return layout
 
+def criar_layout_planilha():
+    layout = []
+    for i in range(len(df)):
+        row = []
+        for col in df.columns:
+            # Adiciona campos de entrada para cada célula usando iloc
+            row.append(sg.InputText(default_text=df[col].iloc[i], key=(i, col), size=(20, 1)))
+        layout.append(row)
+    layout.append([sg.Button('Salvar'), sg.Button('Carregar'), sg.Button('Limpar'), sg.Button('Sair')])
+    return layout
 
 # Função para exibir a janela da planilha
 def exibir_planilha():
@@ -336,9 +350,8 @@ while True:
         
    
     if eventos =='-excel-':
-                janela.hide()
-                exibir_planilha()
-                janela.un_hide()
+        
+         iniciar_programa()
 
 
 
