@@ -7,6 +7,8 @@ import json
 
 # Nome do arquivo onde os dados serão salvos
 json_file = 'dados_salvos.json'
+
+
 class AgendaApp:
     def __init__(self):
         self.filename = "agenda.json"
@@ -288,7 +290,6 @@ def exibir_planilha():
 
     window.close()
 
-# Função principal para iniciar o programa
 
 
 def tela_inicial():
@@ -336,7 +337,6 @@ while True:
         
    
     if eventos =='-excel-':
-        
             janela.hide()
             exibir_planilha()
             janela.un_hide()
