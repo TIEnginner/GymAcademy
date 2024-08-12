@@ -5,9 +5,6 @@ import PySimpleGUI as sg
 import pandas as pd
 import json
 
-def salvar_fichas(fichas):
-    with open('fichas.json', 'w') as file:
-        json.dump(fichas, file, indent=4)
 # Nome do arquivo onde os dados serão salvos
 json_file = 'dados_salvos.json'
 class AgendaApp:
