@@ -1,7 +1,6 @@
 import PySimpleGUI as sg
 import json
 import os
-
 import pandas as pd
 import json
 
@@ -198,10 +197,7 @@ def carregar_fichas():
             return json.load(file)
     return []
 
-# Função para salvar fichas no arquivo JSON
-def salvar_fichas(fichas):
-    with open('fichas.json', 'w') as file:
-        json.dump(fichas, file, indent=4)
+
 
 def nome_academia():
     return [
@@ -350,8 +346,9 @@ while True:
         
    
     if eventos =='-excel-':
-        
-         iniciar_programa()
+                janela.hide()
+                exibir_planilha()
+                janela.un_hide()
 
 
 
